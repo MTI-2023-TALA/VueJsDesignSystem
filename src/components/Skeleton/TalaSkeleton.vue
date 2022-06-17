@@ -1,10 +1,14 @@
 <script setup lang="ts">
-defineProps<{
+export interface TalaSkeletonProps {
   animation: string;
   height: string;
   widht: string;
   variant: string;
-}>();
+}
+
+withDefaults(defineProps<TalaSkeletonProps>(), {
+  animation: "wave",
+});
 </script>
 
 <template>

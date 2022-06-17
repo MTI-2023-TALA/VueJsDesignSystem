@@ -1,10 +1,11 @@
 <script setup lang="ts">
-export interface TalaDropdownItemProps {
+export interface TalaTabProps {
+  title: string;
   active: boolean;
   disabled: boolean;
 }
 
-withDefaults(defineProps<TalaDropdownItemProps>(), {
+withDefaults(defineProps<TalaTabProps>(), {
   active: false,
   disabled: false,
 });

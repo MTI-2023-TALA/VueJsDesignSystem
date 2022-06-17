@@ -1,9 +1,14 @@
 <script setup lang="ts">
-defineProps<{
+export interface TalaNavbarProps {
   fixed: string;
   sticky: boolean;
   variant: string;
-}>();
+}
+
+withDefaults(defineProps<TalaNavbarProps>(), {
+  sticky: false,
+  variant: "primary",
+});
 </script>
 
 <template>

@@ -1,9 +1,14 @@
 <script setup lang="ts">
-defineProps<{
+export interface TalaNavbarItemProps {
   href: string;
   disabled: boolean;
   active: boolean;
-}>();
+}
+
+withDefaults(defineProps<TalaNavbarItemProps>(), {
+  disabled: false,
+  active: false,
+});
 </script>
 
 <template>

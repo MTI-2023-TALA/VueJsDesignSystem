@@ -1,11 +1,19 @@
 <script setup lang="ts">
-defineProps<{
+export interface TalaDropdownProps {
   dropup: boolean;
   dropright: boolean;
   dropleft: boolean;
   split: boolean;
   variant: string;
-}>();
+}
+
+withDefaults(defineProps<TalaDropdownProps>(), {
+  dropup: false,
+  dropright: false,
+  dropleft: false,
+  split: false,
+  variant: "primary",
+});
 </script>
 
 <template>

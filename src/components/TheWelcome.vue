@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import TalaNavbar from "./Navbar/TalaNavbar.vue";
 import WelcomeItem from "./WelcomeItem.vue";
 import DocumentationIcon from "./icons/IconDocumentation.vue";
 import ToolingIcon from "./icons/IconTooling.vue";
@@ -8,6 +9,7 @@ import SupportIcon from "./icons/IconSupport.vue";
 </script>
 
 <template>
+  <TalaNavbar fixed="test"></TalaNavbar>
   <WelcomeItem>
     <template #icon>
       <DocumentationIcon />
