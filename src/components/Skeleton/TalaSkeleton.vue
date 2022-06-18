@@ -96,6 +96,7 @@ withDefaults(defineProps<TalaSkeletonProps>(), {
       hsla(0, 0%, 100%, 0.4),
       transparent
     );
+    z-index: 0;
     position: absolute;
     width: 80%;
     height: 100%;
@@ -105,6 +106,7 @@ withDefaults(defineProps<TalaSkeletonProps>(), {
     bottom: 0;
   }
   position: relative;
+  overflow: hidden;
 }
 
 .throb {

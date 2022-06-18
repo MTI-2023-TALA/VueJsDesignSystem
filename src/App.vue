@@ -1,8 +1,15 @@
 <script setup lang="ts">
 import TalaSkeleton from "./components/Skeleton/TalaSkeleton.vue";
+import TalaBreadcrumb from "./components/Breadcrumb/TalaBreadcrumb.vue";
 </script>
 
 <template>
+  <TalaBreadcrumb
+    :items="[
+      { href: '#', active: false, text: 'Bonjour' },
+      { href: '#', active: true, text: 'Bonsoir' },
+    ]"
+  ></TalaBreadcrumb>
   <TalaSkeleton width="80%" height="1.5rem" animation="throb"></TalaSkeleton>
   <TalaSkeleton
     width="55%"
@@ -20,7 +27,7 @@ import TalaSkeleton from "./components/Skeleton/TalaSkeleton.vue";
   <TalaSkeleton width="90%" height="30px" variant="warn"></TalaSkeleton>
 </template>
 
-<style>
+<style scoped>
 @import "./assets/base.css";
 
 #app {
