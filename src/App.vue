@@ -1,12 +1,23 @@
 <script setup lang="ts">
-import TalaProgress from "./components/Progress/TalaProgress.vue";
+import TalaSkeleton from "./components/Skeleton/TalaSkeleton.vue";
 </script>
 
 <template>
-  <TalaProgress variant="success" value="25" /> <br />
-  <TalaProgress variant="warn" value="50" :animated="true" /><br />
-  <TalaProgress variant="info" value="75" :show-progress="true" /><br />
-  <TalaProgress variant="error" value="100" striped /><br />
+  <TalaSkeleton width="80%" height="1.5rem" animation="throb"></TalaSkeleton>
+  <TalaSkeleton
+    width="55%"
+    height="1rem"
+    animation="fade"
+    variant="info"
+  ></TalaSkeleton>
+  <TalaSkeleton
+    width="75%"
+    height="30px"
+    variant="error"
+    animation="none"
+  ></TalaSkeleton>
+  <TalaSkeleton width="65%" height="1rem" variant="success"></TalaSkeleton>
+  <TalaSkeleton width="90%" height="30px" variant="warn"></TalaSkeleton>
 </template>
 
 <style>
