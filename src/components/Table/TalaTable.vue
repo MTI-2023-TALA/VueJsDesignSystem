@@ -4,7 +4,12 @@ export interface TalaTableProps {
   hover: boolean;
   items: any[];
   small: boolean;
-  fields?: { key: string; label: string; variant: string; sortable: boolean }[];
+  fields?: {
+    key: string;
+    label?: string;
+    variant?: string;
+    sortable?: boolean;
+  }[];
 }
 
 withDefaults(defineProps<TalaTableProps>(), {
@@ -47,24 +52,48 @@ function humanizeKebabCase(key: string): string {
 
 <template>
   <table
+    id="table"
     :class="[
       hover ? 'hover' : '',
       striped ? 'striped' : '',
       small ? 'small' : 'normal',
     ]"
   >
-    <thead>
-      <tr>
-        <th v-for="(value, key) in Object.keys(items[0])" :key="key">
-          {{ humanizeKey(value) }}
-        </th>
+    <div v-if="!fields">
+      <thead>
+        <tr>
+          <th v-for="(value, key) in Object.keys(items[0])" :key="key">
+            {{ humanizeKey(value) }}
+          </th>
+        </tr>
+      </thead>
+      <tr v-for="(row, key) in items" :key="key">
+        <td v-for="(col, key) in Object.keys(items[0])" :key="key">
+          {{ row[col] }}
+        </td>
       </tr>
-    </thead>
-    <tr v-for="(row, key) in items" :key="key">
-      <td v-for="(col, key) in Object.keys(items[0])" :key="key">
-        {{ row[col] }}
-      </td>
-    </tr>
+    </div>
+    <div v-if="fields">
+      <colgroup>
+        <col
+          v-for="(field, key) in fields"
+          :key="key"
+          :class="[field.variant, field.sortable ? 'sortable' : '']"
+        />
+      </colgroup>
+      <thead>
+        <tr>
+          <th v-for="(field, key) in fields" :key="key">
+            {{ field.label ? field.label : humanizeKey(field.key) }}
+          </th>
+        </tr>
+      </thead>
+      <tr v-for="(row, key) in items" :key="key">
+        <td v-for="(field, key) in fields" :key="key">
+          {{ row[field.key] }}
+        </td>
+      </tr>
+    </div>
   </table>
 </template>
 
@@ -100,5 +129,21 @@ function humanizeKebabCase(key: string): string {
 th {
   text-align: left;
   text-decoration: solid;
+}
+
+.info {
+  background-color: blue;
+}
+
+.success {
+  background-color: green;
+}
+
+.warn {
+  background-color: orange;
+}
+
+.error {
+  background-color: red;
 }
 </style>

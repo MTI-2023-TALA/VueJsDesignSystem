@@ -56,6 +56,20 @@ import TalaTable from "./components/Table/TalaTable.vue";
       { age: 40, first_name: 'Toto', last_name: 'Tata' },
     ]"
   ></TalaTable>
+  <p>FIELD TABLE</p>
+  <TalaTable
+    :striped="true"
+    :items="[
+      { age: 40, first_name: 'Toto', last_name: 'Tata' },
+      { age: 30, first_name: 'Toto', last_name: 'Tata' },
+      { age: 20, first_name: 'Toto', last_name: 'Tata' },
+      { age: 10, first_name: 'Toto', last_name: 'Tata' },
+    ]"
+    :fields="[
+      { key: 'age', sortable: true },
+      { key: 'first_name', label: 'Another one', variant: 'success' },
+    ]"
+  ></TalaTable>
 </template>
 
 <style scoped>
