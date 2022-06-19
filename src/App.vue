@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import TalaSkeleton from "./components/Skeleton/TalaSkeleton.vue";
 import TalaBreadcrumb from "./components/Breadcrumb/TalaBreadcrumb.vue";
+import TalaTable from "./components/Table/TalaTable.vue";
 </script>
 
 <template>
@@ -25,6 +26,36 @@ import TalaBreadcrumb from "./components/Breadcrumb/TalaBreadcrumb.vue";
   ></TalaSkeleton>
   <TalaSkeleton width="65%" height="1rem" variant="success"></TalaSkeleton>
   <TalaSkeleton width="90%" height="30px" variant="warn"></TalaSkeleton>
+  <p>SMALL TABLE</p>
+  <TalaTable
+    :small="true"
+    :items="[
+      { age: 40, first_name: 'Toto', last_name: 'Tata' },
+      { age: 40, first_name: 'Toto', last_name: 'Tata' },
+      { age: 40, first_name: 'Toto', last_name: 'Tata' },
+      { age: 40, first_name: 'Toto', last_name: 'Tata' },
+    ]"
+  ></TalaTable>
+  <p>HOVER TABLE</p>
+  <TalaTable
+    :hover="true"
+    :items="[
+      { age: 40, first_name: 'Toto', last_name: 'Tata' },
+      { age: 40, first_name: 'Toto', last_name: 'Tata' },
+      { age: 40, first_name: 'Toto', last_name: 'Tata' },
+      { age: 40, first_name: 'Toto', last_name: 'Tata' },
+    ]"
+  ></TalaTable>
+  <p>STRIPED TABLE</p>
+  <TalaTable
+    :striped="true"
+    :items="[
+      { age: 40, first_name: 'Toto', last_name: 'Tata' },
+      { age: 40, first_name: 'Toto', last_name: 'Tata' },
+      { age: 40, first_name: 'Toto', last_name: 'Tata' },
+      { age: 40, first_name: 'Toto', last_name: 'Tata' },
+    ]"
+  ></TalaTable>
 </template>
 
 <style scoped>
