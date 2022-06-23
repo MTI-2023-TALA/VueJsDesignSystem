@@ -27,13 +27,14 @@ withDefaults(defineProps<TalaProgressProps>(), {
 </template>
 
 <style lang="scss" scoped>
+@import "../../assets/_variables.scss";
 .loading-bar {
   position: relative;
   margin: 1rem;
   width: 800px;
   height: 30px;
   border-radius: 2px;
-  border: 3px solid #ddd;
+  border: 3px solid $light-grey-500;
   text-align: center;
 }
 
@@ -45,19 +46,19 @@ withDefaults(defineProps<TalaProgressProps>(), {
 }
 
 .info {
-  background-color: blue;
+  background-color: $information-500;
 }
 
 .success {
-  background-color: green;
+  background-color: $success-500;
 }
 
 .warn {
-  background-color: orange;
+  background-color: $warning-500;
 }
 
 .error {
-  background-color: red;
+  background-color: $error-500;
 }
 
 .striped {

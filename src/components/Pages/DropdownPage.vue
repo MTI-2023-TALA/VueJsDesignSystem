@@ -6,11 +6,11 @@ import TalaDropownDivider from "../Dropdown/TalaDropownDivider.vue";
 
 <template>
   <TalaDropdown>
-    <TalaDropownItem>A</TalaDropownItem>
-    <TalaDropownItem>B</TalaDropownItem>
+    <TalaDropownItem>Basic item</TalaDropownItem>
+    <TalaDropownItem>Another one over a divider</TalaDropownItem>
     <TalaDropownDivider></TalaDropownDivider>
-    <TalaDropownItem disabled>C</TalaDropownItem>
-    <TalaDropownItem active>D</TalaDropownItem>
+    <TalaDropownItem disabled>A disabled item</TalaDropownItem>
+    <TalaDropownItem active>The active item</TalaDropownItem>
   </TalaDropdown>
 </template>
 

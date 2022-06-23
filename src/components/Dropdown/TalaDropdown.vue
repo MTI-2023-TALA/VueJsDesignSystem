@@ -5,6 +5,7 @@ export interface TalaDropdownProps {
   dropleft: boolean;
   split: boolean;
   variant: string;
+  text?: string;
 }
 
 function toggleDropdown() {
@@ -31,13 +32,14 @@ withDefaults(defineProps<TalaDropdownProps>(), {
   dropleft: false,
   split: false,
   variant: "primary",
+  text: "Dropdown",
 });
 </script>
 
 <template>
   <div class="dropdown">
     <button v-on:click="toggleDropdown()" class="dropdown-button">
-      Dropdown
+      {{ text }}
     </button>
     <div id="myDropdown" class="dropdown-content">
       <slot></slot>
