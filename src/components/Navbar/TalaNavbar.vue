@@ -12,14 +12,36 @@ withDefaults(defineProps<TalaNavbarProps>(), {
 </script>
 
 <template>
-  <div class="navbar">
+  <div class="navbar" :class="variant">
     <slot></slot>
   </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "../../assets/variables";
 .navbar {
-  background-color: #e9ecef;
+  background-color: $light-grey-300;
   padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.primary {
+  background-color: $primary-400;
+}
+
+.info {
+  background-color: $information-500;
+}
+
+.success {
+  background-color: $success-500;
+}
+
+.warn {
+  background-color: $warning-500;
+}
+
+.error {
+  background-color: $error-500;
 }
 </style>

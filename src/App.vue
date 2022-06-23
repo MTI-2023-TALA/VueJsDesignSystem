@@ -4,13 +4,14 @@ import TalaNavbarItem from "./components/Navbar/TalaNavbarItem.vue";
 </script>
 
 <template>
-  <TalaNavbarVue>
+  <TalaNavbarVue sticky>
     <TalaNavbarItem href="/">Home Page</TalaNavbarItem>
     <TalaNavbarItem href="skeleton">Skeleton</TalaNavbarItem>
     <TalaNavbarItem href="breadcrumb">Breadcrumb</TalaNavbarItem>
     <TalaNavbarItem href="progress">Progress Bar</TalaNavbarItem>
     <TalaNavbarItem href="table">Table</TalaNavbarItem>
     <TalaNavbarItem href="dropdown">Dropdown</TalaNavbarItem>
+    <TalaNavbarItem href="navbar">Navbar</TalaNavbarItem>
   </TalaNavbarVue>
   <router-view></router-view>
 </template>

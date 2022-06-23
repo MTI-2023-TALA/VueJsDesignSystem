@@ -8,6 +8,7 @@ import ProgressBarPageVue from "./components/Pages/ProgressBarPage.vue";
 import SkeletonPageVue from "./components/Pages/SkeletonPage.vue";
 import TablePageVue from "./components/Pages/TablePage.vue";
 import { createApp } from "vue";
+import NavbarPageVue from "./components/Pages/NavbarPage.vue";
 
 const Bar = { template: "<div>bar</div>" };
 
@@ -18,6 +19,7 @@ const routes = [
   { path: "/progress", component: ProgressBarPageVue },
   { path: "/table", component: TablePageVue },
   { path: "/dropdown", component: DropdownPageVue },
+  { path: "/navbar", component: NavbarPageVue },
 ];
 
 const router = createRouter({

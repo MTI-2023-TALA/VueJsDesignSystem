@@ -22,9 +22,15 @@ withDefaults(defineProps<TalaNavbarItemProps>(), {
   </router-link>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "../../assets/variables";
 .navbar-item {
   display: inline;
   padding: 5px;
+  color: $light-grey-100;
+}
+
+.navbar-item:hover {
+  color: $light-grey-500;
 }
 </style>
