@@ -2,6 +2,7 @@ import { createRouter, createWebHashHistory } from "vue-router";
 
 import App from "./App.vue";
 import BreadcrumbPageVue from "./components/Pages/BreadcrumbPage.vue";
+import DropdownPageVue from "./components/Pages/DropdownPage.vue";
 import HomePageVue from "./components/Pages/HomePage.vue";
 import ProgressBarPageVue from "./components/Pages/ProgressBarPage.vue";
 import SkeletonPageVue from "./components/Pages/SkeletonPage.vue";
@@ -16,6 +17,7 @@ const routes = [
   { path: "/breadcrumb", component: BreadcrumbPageVue },
   { path: "/progress", component: ProgressBarPageVue },
   { path: "/table", component: TablePageVue },
+  { path: "/dropdown", component: DropdownPageVue },
 ];
 
 const router = createRouter({

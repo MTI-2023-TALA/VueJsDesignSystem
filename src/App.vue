@@ -10,6 +10,7 @@ import TalaNavbarItem from "./components/Navbar/TalaNavbarItem.vue";
     <TalaNavbarItem href="breadcrumb">Breadcrumb</TalaNavbarItem>
     <TalaNavbarItem href="progress">Progress Bar</TalaNavbarItem>
     <TalaNavbarItem href="table">Table</TalaNavbarItem>
+    <TalaNavbarItem href="dropdown">Dropdown</TalaNavbarItem>
   </TalaNavbarVue>
   <router-view></router-view>
 </template>
