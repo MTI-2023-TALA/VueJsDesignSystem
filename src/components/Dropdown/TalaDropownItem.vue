@@ -16,32 +16,30 @@ withDefaults(defineProps<TalaDropdownItemProps>(), {
   </a>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "../../assets/variables";
 .dropdown-content .abled {
-  color: black;
+  color: $black;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
 }
 
 .dropdown a.abled:hover {
-  background-color: #ddd;
+  background-color: $light-grey-500;
 }
 
 .dropdown a.abled.active:hover {
-  background-color: lightblue;
+  background-color: $information-500;
 }
 
-.dropdown a.active:hover {
-  background-color: #ddd;
-}
-
-.active {
-  background-color: blue;
+.dropdown-content .active {
+  background-color: $information-500;
+  color: $white;
 }
 
 .dropdown-content .disabled {
-  color: #888;
+  color: $light-grey-800;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
