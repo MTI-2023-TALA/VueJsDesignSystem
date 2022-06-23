@@ -98,10 +98,11 @@ function humanizeKebabCase(key: string): string {
 </template>
 
 <style lang="scss" scoped>
+@import "../../assets/variables";
 .normal {
   td,
   th {
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid $light-grey-400;
     padding: 8px;
   }
 }
@@ -109,20 +110,20 @@ function humanizeKebabCase(key: string): string {
 .small {
   td,
   th {
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid $light-grey-400;
     padding: 4px;
   }
 }
 
 .striped {
   tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: $light-grey-300;
   }
 }
 
 .hover {
   tr:hover {
-    background-color: #ddd;
+    background-color: $light-grey-400;
   }
 }
 
@@ -132,18 +133,18 @@ th {
 }
 
 .info {
-  background-color: blue;
+  background-color: $information-400;
 }
 
 .success {
-  background-color: green;
+  background-color: $success-400;
 }
 
 .warn {
-  background-color: orange;
+  background-color: $warning-400;
 }
 
 .error {
-  background-color: red;
+  background-color: $error-400 !important;
 }
 </style>
