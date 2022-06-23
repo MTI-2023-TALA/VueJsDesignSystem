@@ -12,6 +12,8 @@ import TalaNavbarItem from "./components/Navbar/TalaNavbarItem.vue";
     <TalaNavbarItem href="table">Table</TalaNavbarItem>
     <TalaNavbarItem href="dropdown">Dropdown</TalaNavbarItem>
     <TalaNavbarItem href="navbar">Navbar</TalaNavbarItem>
+    <TalaNavbarItem href="tabs">Tabs</TalaNavbarItem>
+    <TalaNavbarItem href="modal">Modal</TalaNavbarItem>
   </TalaNavbarVue>
   <router-view></router-view>
 </template>

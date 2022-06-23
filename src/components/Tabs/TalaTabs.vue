@@ -15,7 +15,10 @@ withDefaults(defineProps<TalaTabsProps>(), {
 </script>
 
 <template>
-  <div></div>
+  <div class="tabs">
+    <slot></slot>
+  </div>
 </template>
-
-<style scoped></style>
+<style lang="scss" scoped>
+@import "../../assets/variables";
+</style>
