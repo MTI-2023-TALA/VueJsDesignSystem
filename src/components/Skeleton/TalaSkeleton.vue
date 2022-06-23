@@ -24,6 +24,7 @@ withDefaults(defineProps<TalaSkeletonProps>(), {
 </template>
 
 <style lang="scss" scoped>
+@import "../../assets/variables.scss";
 .container {
   position: relative;
   margin: 1rem;
@@ -40,23 +41,23 @@ withDefaults(defineProps<TalaSkeletonProps>(), {
 }
 
 .info {
-  background-color: blue;
+  background-color: $information-500;
 }
 
 .success {
-  background-color: green;
+  background-color: $success-500;
 }
 
 .warn {
-  background-color: orange;
+  background-color: $warning-500;
 }
 
 .error {
-  background-color: red;
+  background-color: $error-500;
 }
 
 .default {
-  background-color: grey;
+  background-color: $light-grey-700;
 }
 
 @keyframes wave-anim {
