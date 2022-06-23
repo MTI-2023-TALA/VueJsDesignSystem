@@ -12,7 +12,19 @@ withDefaults(defineProps<TalaNavbarItemProps>(), {
 </script>
 
 <template>
-  <div></div>
+  <router-link
+    :to="href"
+    class="navbar-item"
+    :disabled="disabled"
+    :active="active"
+  >
+    <slot></slot>
+  </router-link>
 </template>
 
-<style scoped></style>
+<style scoped>
+.navbar-item {
+  display: inline;
+  padding: 5px;
+}
+</style>

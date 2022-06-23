@@ -1,6 +1,6 @@
 <script setup lang="ts">
 export interface TalaNavbarProps {
-  fixed: string;
+  fixed?: string;
   sticky: boolean;
   variant: string;
 }
@@ -12,7 +12,14 @@ withDefaults(defineProps<TalaNavbarProps>(), {
 </script>
 
 <template>
-  <div></div>
+  <div class="navbar">
+    <slot></slot>
+  </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.navbar {
+  background-color: #e9ecef;
+  padding: 0.75rem 1rem;
+}
+</style>

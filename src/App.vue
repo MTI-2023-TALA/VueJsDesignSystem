@@ -1,75 +1,17 @@
 <script setup lang="ts">
-import TalaSkeleton from "./components/Skeleton/TalaSkeleton.vue";
-import TalaBreadcrumb from "./components/Breadcrumb/TalaBreadcrumb.vue";
-import TalaTable from "./components/Table/TalaTable.vue";
+import TalaNavbarVue from "./components/Navbar/TalaNavbar.vue";
+import TalaNavbarItem from "./components/Navbar/TalaNavbarItem.vue";
 </script>
 
 <template>
-  <TalaBreadcrumb
-    :items="[
-      { href: '#', active: false, text: 'Bonjour' },
-      { href: '#', active: true, text: 'Bonsoir' },
-    ]"
-  ></TalaBreadcrumb>
-  <TalaSkeleton width="80%" height="1.5rem" animation="throb"></TalaSkeleton>
-  <TalaSkeleton
-    width="55%"
-    height="1rem"
-    animation="fade"
-    variant="info"
-  ></TalaSkeleton>
-  <TalaSkeleton
-    width="75%"
-    height="30px"
-    variant="error"
-    animation="none"
-  ></TalaSkeleton>
-  <TalaSkeleton width="65%" height="1rem" variant="success"></TalaSkeleton>
-  <TalaSkeleton width="90%" height="30px" variant="warn"></TalaSkeleton>
-  <p>SMALL TABLE</p>
-  <TalaTable
-    :small="true"
-    :items="[
-      { age: 40, first_name: 'Toto', last_name: 'Tata' },
-      { age: 40, first_name: 'Toto', last_name: 'Tata' },
-      { age: 40, first_name: 'Toto', last_name: 'Tata' },
-      { age: 40, first_name: 'Toto', last_name: 'Tata' },
-    ]"
-  ></TalaTable>
-  <p>HOVER TABLE</p>
-  <TalaTable
-    :hover="true"
-    :items="[
-      { age: 40, first_name: 'Toto', last_name: 'Tata' },
-      { age: 40, first_name: 'Toto', last_name: 'Tata' },
-      { age: 40, first_name: 'Toto', last_name: 'Tata' },
-      { age: 40, first_name: 'Toto', last_name: 'Tata' },
-    ]"
-  ></TalaTable>
-  <p>STRIPED TABLE</p>
-  <TalaTable
-    :striped="true"
-    :items="[
-      { age: 40, first_name: 'Toto', last_name: 'Tata' },
-      { age: 40, first_name: 'Toto', last_name: 'Tata' },
-      { age: 40, first_name: 'Toto', last_name: 'Tata' },
-      { age: 40, first_name: 'Toto', last_name: 'Tata' },
-    ]"
-  ></TalaTable>
-  <p>FIELD TABLE</p>
-  <TalaTable
-    :striped="true"
-    :items="[
-      { age: 40, first_name: 'Toto', last_name: 'Tata' },
-      { age: 30, first_name: 'Toto', last_name: 'Tata' },
-      { age: 20, first_name: 'Toto', last_name: 'Tata' },
-      { age: 10, first_name: 'Toto', last_name: 'Tata' },
-    ]"
-    :fields="[
-      { key: 'age', sortable: true },
-      { key: 'first_name', label: 'Another one', variant: 'success' },
-    ]"
-  ></TalaTable>
+  <TalaNavbarVue>
+    <TalaNavbarItem href="/">Home Page</TalaNavbarItem>
+    <TalaNavbarItem href="skeleton">Skeleton</TalaNavbarItem>
+    <TalaNavbarItem href="breadcrumb">Breadcrumb</TalaNavbarItem>
+    <TalaNavbarItem href="progress">Progress Bar</TalaNavbarItem>
+    <TalaNavbarItem href="table">Table</TalaNavbarItem>
+  </TalaNavbarVue>
+  <router-view></router-view>
 </template>
 
 <style scoped>
