@@ -15,27 +15,29 @@ defineProps<{
 </template>
 
 <style lang="scss" scoped>
+@import "../../assets/variables";
+
 .breadcrumb {
-  background-color: #e9ecef;
+  background-color: $light-grey-300;
   padding: 0.75rem 1rem;
+  margin: 0.5rem;
 }
 
 .breadcrumb-item {
   display: inline-block;
   font-size: 1rem;
   font-weight: 700;
-  color: #6c757d;
+  color: $dark-grey-300;
   text-decoration: none;
   background-color: transparent;
 
   a {
     &.active {
-      color: #343a40;
-      background-color: #e9ecef;
+      color: $dark-grey-600;
       pointer-events: none;
     }
 
-    color: blue;
+    color: $information-500;
     text-decoration: none;
   }
 

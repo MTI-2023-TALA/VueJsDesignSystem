@@ -6,7 +6,8 @@ import TalaBreadcrumb from "../Breadcrumb/TalaBreadcrumb.vue";
   <TalaBreadcrumb
     :items="[
       { href: '#', active: false, text: 'Go back to home' },
-      { href: 'breadcrumb', active: true, text: 'Breadcrumb page' },
+      { href: '#', active: false, text: 'Those breadcrumbs are inactive' },
+      { href: 'breadcrumb', active: true, text: 'But this one is active' },
     ]"
   ></TalaBreadcrumb>
 </template>
