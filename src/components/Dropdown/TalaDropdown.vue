@@ -8,23 +8,10 @@ export interface TalaDropdownProps {
   text?: string;
 }
 
-function toggleDropdown() {
-  document.getElementById("myDropdown")?.classList.toggle("show");
+function toggleDropdown(event) {
+  console.log(event.srcElement);
+  event.srcElement.nextSibling.classList.toggle("show");
 }
-
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function (event) {
-  if (!event?.target?.matches(".dropdown-button")) {
-    const dropdowns = document.getElementsByClassName("dropdown-content");
-    let i;
-    for (i = 0; i < dropdowns.length; i++) {
-      const openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains("show")) {
-        openDropdown.classList.remove("show");
-      }
-    }
-  }
-};
 
 withDefaults(defineProps<TalaDropdownProps>(), {
   dropup: false,
@@ -38,10 +25,18 @@ withDefaults(defineProps<TalaDropdownProps>(), {
 
 <template>
   <div class="dropdown">
-    <button v-on:click="toggleDropdown()" class="dropdown-button">
+    <button v-on:click="toggleDropdown($event)" class="dropdown-button">
       {{ text }}
     </button>
-    <div id="myDropdown" class="dropdown-content">
+    <div
+      id="myDropdown"
+      class="dropdown-content"
+      :class="[
+        dropleft ? 'dropleft' : '',
+        dropright ? 'dropright' : '',
+        dropup ? 'dropup' : '',
+      ]"
+    >
       <slot></slot>
     </div>
   </div>
@@ -52,6 +47,7 @@ withDefaults(defineProps<TalaDropdownProps>(), {
 .dropdown {
   position: relative;
   display: inline-block;
+  margin: 0.5rem;
 }
 
 .dropdown-button {
@@ -71,6 +67,21 @@ withDefaults(defineProps<TalaDropdownProps>(), {
   overflow: auto;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
+  &.dropleft {
+    top: 0;
+    right: 100%;
+    left: auto;
+  }
+  &.dropright {
+    top: 0;
+    right: auto;
+    left: 100%;
+  }
+
+  &.dropup {
+    top: auto;
+    bottom: 100%;
+  }
 }
 .show {
   display: block;
