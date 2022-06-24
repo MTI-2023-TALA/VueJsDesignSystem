@@ -32,6 +32,11 @@ import TalaDropownDivider from "../Dropdown/TalaDropownDivider.vue";
     <TalaDropownDivider></TalaDropownDivider>
     <TalaDropownItem active>The active item</TalaDropownItem>
   </TalaDropdown>
+  <TalaDropdown split text="Splited">
+    <TalaDropownItem>Basic item</TalaDropownItem>
+    <TalaDropownDivider></TalaDropownDivider>
+    <TalaDropownItem active>The active item</TalaDropownItem>
+  </TalaDropdown>
 </template>
 
 <style scoped></style>
