@@ -2,15 +2,16 @@
   "name": "vue-js-design-system",
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
     "build": "run-p type-check build-only",
-    "preview": "vite preview --port 4173",
     "test:unit": "vitest --environment jsdom",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "build-only": "vite build",
-    "type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false",
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
+    "dev": "vite",
+    "preview": "vite preview --port 4173",
+    "type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false"
   },
   "dependencies": {
+    "core-js": "^3.8.3",
     "vue": "^3.2.36",
     "vue-router": "^4.0.16"
   },
@@ -19,6 +20,7 @@
     "@types/jsdom": "^16.2.14",
     "@types/node": "^16.11.36",
     "@vitejs/plugin-vue": "^2.3.3",
+    "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/eslint-config-prettier": "^7.0.0",
     "@vue/eslint-config-typescript": "^11.0.0",
     "@vue/test-utils": "^2.0.0",
