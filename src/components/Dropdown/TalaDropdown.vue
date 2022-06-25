@@ -8,7 +8,7 @@ export interface TalaDropdownProps {
   text?: string;
 }
 
-function toggleDropdown(event) {
+function toggleDropdown(event: any) {
   let sibling = event.srcElement.nextSibling;
   while (sibling && sibling.id != "myDropdown") {
     sibling = sibling.nextSibling;
