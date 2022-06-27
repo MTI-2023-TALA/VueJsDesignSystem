@@ -43,7 +43,12 @@ import TalaTable from "../Table/TalaTable.vue";
     ]"
     :fields="[
       { key: 'age', sortable: true },
-      { key: 'first_name', label: 'Success', variant: 'success' },
+      {
+        key: 'first_name',
+        label: 'Success',
+        variant: 'success',
+        sortable: true,
+      },
       { key: 'first_name', label: 'Warn', variant: 'warn' },
       {
         key: 'first_name',
