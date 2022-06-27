@@ -215,6 +215,7 @@ function sortTable(colNum: number, event: Event) {
 .sort-button {
   max-width: 20px;
   max-height: 20px;
+  background-color: transparent;
 }
 
 .small {
