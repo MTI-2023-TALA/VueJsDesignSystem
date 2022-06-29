@@ -58,11 +58,14 @@ function sortOrder(a: string, b: string): boolean {
   return a < b;
 }
 
-function sortTable(colNum: number, event: Event) {
-  let table: HTMLTableElement;
+function sortTable(colNum: number, event: any) {
+  let table: HTMLTableElement | null = null;
   const tables = document.getElementsByTagName("table");
   for (const t of tables) {
     if (t.contains(event.target)) table = t;
+  }
+  if (table === null) {
+    return;
   }
   let switching = true;
   let shouldSwitch = false;
@@ -80,7 +83,7 @@ function sortTable(colNum: number, event: Event) {
       }
     }
     if (shouldSwitch) {
-      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      rows[i].parentNode?.insertBefore(rows[i + 1], rows[i]);
       switching = true;
     }
   }

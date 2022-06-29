@@ -5,7 +5,10 @@ export interface TalaTabProps {
   disabled: boolean;
 }
 
-function openTab(evt: Event, tab: string) {
+function openTab(evt: Event, tab: string, disabled: boolean) {
+  if (disabled) {
+    return;
+  }
   const tabcontent = document.getElementsByClassName("tab-content");
   for (let i = 0; i < tabcontent.length; i++) {
     (tabcontent[i] as any).style.display = "none";
@@ -28,13 +31,17 @@ withDefaults(defineProps<TalaTabProps>(), {
   <div class="tab">
     <button
       class="tab-link"
-      v-on:click="openTab($event, title)"
-      :class="disabled ? 'disabled' : ''"
+      v-on:click="openTab($event, title, disabled)"
+      :class="[disabled ? 'disabled' : '', active ? 'active' : '']"
     >
       {{ title }}
     </button>
   </div>
-  <div :id="title" class="tab-content">
+  <div
+    :id="title"
+    class="tab-content"
+    :style="[active ? 'display: block;' : '']"
+  >
     <slot></slot>
   </div>
 </template>
@@ -58,12 +65,9 @@ withDefaults(defineProps<TalaTabProps>(), {
 .tab-link.active {
   color: $dark-grey-800;
 }
-.tab-link.disable {
-  background-color: red;
-}
 
 /* Change background color of buttons on hover */
-.tab button:hover {
+.tab button:hover:not(.disabled) {
   background-color: $light-grey-500;
 }
 
@@ -78,5 +82,10 @@ withDefaults(defineProps<TalaTabProps>(), {
   padding: 6px 12px;
   border: 1px solid #ccc;
   border-top: none;
+}
+
+.tab button.disabled {
+  color: $dark-grey-300;
+  cursor: default;
 }
 </style>
