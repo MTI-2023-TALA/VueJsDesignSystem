@@ -219,6 +219,12 @@ function sortTable(colNum: number, event: any) {
   max-width: 20px;
   max-height: 20px;
   background-color: transparent;
+  border: none;
+
+  svg {
+    width: 0.75rem;
+    height: 0.75rem;
+  }
 }
 
 .small {

@@ -12,9 +12,10 @@ withDefaults(defineProps<TalaNavbarProps>(), {
 </script>
 
 <template>
-  <div class="navbar" :class="variant">
+  <div class="navbar" :class="[variant, { sticky: sticky }]">
     <slot></slot>
   </div>
+  <div :class="{ stickyMargin: sticky }"></div>
 </template>
 
 <style lang="scss" scoped>
@@ -43,5 +44,17 @@ withDefaults(defineProps<TalaNavbarProps>(), {
 
 .error {
   background-color: $error-500;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.stickyMargin {
+  margin-bottom: 4rem;
 }
 </style>

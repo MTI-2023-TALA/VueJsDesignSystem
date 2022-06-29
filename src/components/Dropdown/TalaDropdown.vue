@@ -8,8 +8,17 @@ export interface TalaDropdownProps {
   text?: string;
 }
 
-function toggleDropdown(event: any) {
+function toggleDropdown(event: any, disabled = false, isSplitted = false) {
+  if (disabled) return;
   let sibling = event.srcElement.nextSibling;
+  console.log(sibling);
+
+  if (isSplitted) {
+    sibling = event.srcElement.parentNode?.nextSibling;
+    if (!sibling) {
+      sibling = event.srcElement.parentNode?.parentNode?.nextSibling;
+    }
+  }
   while (sibling && sibling.id != "myDropdown") {
     sibling = sibling.nextSibling;
   }
@@ -28,35 +37,26 @@ withDefaults(defineProps<TalaDropdownProps>(), {
 
 <template>
   <div class="dropdown">
-    <button
-      v-if="!split"
-      v-on:click="toggleDropdown($event)"
-      class="dropdown-button"
-    >
+    <button v-on:click="toggleDropdown($event, split)" class="dropdown-button">
       {{ text }}
-    </button>
-    <button v-show="split" class="dropdown-button">
-      {{ text }}
-    </button>
-    <button
-      v-show="split"
-      class="dropdown-button"
-      v-on:click="toggleDropdown($event)"
-    >
-      <svg
-        class="dropdown-button triangle"
-        version="1.1"
-        id="Layer_1"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
-        viewBox="0 0 531.74 460.5"
-        overflow="visible"
-        enable-background="new 0 0 531.74 460.5"
-        xml:space="preserve"
-        height="16"
+      <button
+        v-show="split"
+        v-on:click="toggleDropdown($event, false, split)"
+        class="btn-arrow"
       >
-        <polygon fill="#ffffff" points="530.874,0.5 265.87,459.5 0.866,0.5 " />
-      </svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-caret-down"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z"
+          />
+        </svg>
+      </button>
     </button>
 
     <div
@@ -82,15 +82,38 @@ withDefaults(defineProps<TalaDropdownProps>(), {
 }
 
 .dropdown-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   background-color: $information-500;
   color: $white;
   padding: 16px;
-  &.triangle {
-    padding: 0px;
-  }
+
   font-size: 16px;
   border: none;
   cursor: pointer;
+
+  .btn-arrow {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $information-500;
+    color: $white;
+
+    padding: 0;
+    padding-left: 8px;
+    margin: 0;
+    border: none;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .dropdown-content {

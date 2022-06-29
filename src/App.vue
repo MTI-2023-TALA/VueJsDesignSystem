@@ -23,4 +23,9 @@ import TalaNavbarItem from "./components/Navbar/TalaNavbarItem.vue";
 body {
   margin: 0;
 }
+
+a {
+  color: #000;
+  text-decoration: none;
+}
 </style>
